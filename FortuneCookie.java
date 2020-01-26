@@ -4,7 +4,7 @@
 /* This is how to make a multi
 line comment */
 
-
+ 
 //Imports java Random
 import java.util.Random;
 //Creates a public class named FortuneCookie
