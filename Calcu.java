@@ -1,6 +1,13 @@
 import java.util.Scanner;
 public class Calcu {
+/* This is how to make a multi
+line comment */
 
+//I added this comment later, This is a console based calulator. You get user input for the first number, second number and the opperation (+ - * /) and then you calculate the result and print it to the screen. Good luck!
+	
+	
+
+	
 //Ran well on first try, had to search up how to use scanner tho
 	
 //First we declare the variables
