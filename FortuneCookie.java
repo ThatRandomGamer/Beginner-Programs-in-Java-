@@ -1,7 +1,8 @@
 // By the way, all of the projects in this workspace will have comments. This is the learning workspace after all! Remeber, always comment
 //I added this comment later, This is a console based fortune cookie generator. You run the program and it prints a randomly selected fortune from an array. Good luck! Hint incoming, look away if you want to do it on your own SPACE SPACE SPACE    hint: Store your fortunes in a string array and use the array.lentgh to use as a range for the Random object. Use the random object to use as an index for the array
 
-
+/* This is how to make a multi
+line comment */
 
 
 //Imports java Random
