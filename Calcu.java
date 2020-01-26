@@ -35,7 +35,7 @@ line comment */
 		//Next() method defaults a string, have to specify other data types for other data types i.e int
 		opperand = sc.next();
 //Setup switch cases
-	switch(opperand) {
+	switch(opperand)  {
 		case "+":
 			sum = firstNum + secondNum;
 			System.out.println( "Sum is" + " " + sum); //I kind of forgot how to print a variable with a "" but later on i remembered, lol
