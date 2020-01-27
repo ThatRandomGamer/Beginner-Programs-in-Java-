@@ -1,7 +1,7 @@
 // By the way, all of the projects in this workspace will have comments. This is the learning workspace after all! Remeber, always comment
 // This is a console based dice roll-ing program. It uses the Random class. Good luck!
 
-
+ 
 
 /* This is how to make a multi
 line comment */
