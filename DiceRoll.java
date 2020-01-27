@@ -18,7 +18,7 @@ public class DiceRoll {
 		Random diceNum = new Random();
 	
 // Sets up an integer variable called dice and its value is the random number from diceNum		
-		int dice = diceNum.nextInt(7); // Using 6 as the index would set the range as 0-5. 7 sets it as 1-6. Weird Java quirck
+		int dice = diceNum.nextInt((6) + 1); // Using 6 as the index would set the range as 0-5. (6) +1 sets it as 1-6. Weird Java quirck
 		
 //Prints or displays the random dice roll		
 		System.out.println("The dice rolls. It reads: " + dice);
