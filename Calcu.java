@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Calcu {
 
 //Ran well on first try, had to search up how to use scanner tho
-	
+	 
 //First we declare the variables
 	
 	public static int firstNum;
