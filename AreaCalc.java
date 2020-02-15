@@ -1,114 +1,61 @@
-// By the way, all of the projects in this workspace will have comments. This is the learning workspace after all! Remeber, always comment
-// This is a console based dice roll-ing program. It uses the Random class. Good luck!
-
-
-
-/* This is how to make a multi
-line comment */
-//Imports the scanner class
 import java.util.Scanner;
+
 public class AreaCalc {
-	  
-	//Ah yes, the main method. Never forget! 
-	public static void main(String args[]) {
-//Setting up scanner           	
-		System.out.println("Enter shape. Choose from Square, Rectangle, Triangle(Only equilateral triangle are accepted), Circle and Parallelogram. \n Then enter lentgh and breadth. \n Breadth value will be used as base for triangle and parallelogram \n length value will be used as height for triangle and parallelogram and will be used as side length for Square and radius for circle");
-            	  Scanner s = new Scanner(System.in);
-            
-        System.out.println("First enter the shape");
-            	  String shape = s.next();
-         
-        System.out.println("Now enter the operation: Perimeter or Area");
-            	  String op = s.next();
-            	
-        System.out.println("Enter the lentgh"); 
-            	  int l = s.nextInt();
-           
-        System.out.println("Now enter the breadth, enter it as 1 if you chose circle or square. I dont know a workaround for it");
-             	  int b =s.nextInt();
-            	 
-      //Now this is some wonky code. Tell me how to improve it
-       
-      //This is what I call nested switch case       	  
- 
-             	  //This is the main switch. It takes care of the shapes
-            	 switch(shape) {
-            	   case("Square"):
-            		 //This is the nested switch which takes care of the operations. You could use if else statements here.   
-            	     switch (op) {
-            	  
-            	      case("Perimeter"):
-             		   System.out.println("The perimeter is:" + l * 4); 
-            	      break;
-            	      case("Area"):
-              		   System.out.println("The area is:" + l * l);
-            	      break;
 
-            	   }
-         	      break;
+    public static void main(String[] args) {
 
-            	   case("Rectangle"):
-              	     switch (op) {
-              	  
-              	      case("Perimeter"):
-               		   System.out.println("The perimeter is:" + 2*(l+b));
-            	      break;
+        Scanner scan = new Scanner(System.in);
 
-              	      case("Area"):
-                		   System.out.println("The area is:" + l*b);
-            	      break;
-              	   
-              	   }
-         	      break;
-            	  
-            	   case("Triangle"):
-              	     switch (op) {
-              	  
-              	      case("Perimeter"):
-               		   System.out.println("The perimeter is:" + 3 * l);
-            	      break;
+        System.out.print("Enter shape. Choose from Square, Rectangle, Triangle, Circle " +
+                        " and Parallelogram: ");
+        String shapeInput = scan.nextLine().toLowerCase();
+        System.out.print("Perimeter or Area? ");
+        String calculateWhat = scan.nextLine();
 
-              	      case("Area"):
-                		   System.out.println("The area is:" + 0.5 * l * b);
-            	      break;
-              	   
-              	   }
-         	      break;
-            	   
-            	   
-            	   case("Parallelogram"):
-              	     switch (op) {
-              	  
-              	      case("Perimeter"):
+        double length, width, height, radius;
+        switch (shapeInput) {
+            case "square":
+                System.out.print("Enter a positive measurement for the side of this square: ");
+                length = Double.parseDouble(scan.nextLine());
+                if (calculateWhat.equalsIgnoreCase("perimeter")) {
+                    System.out.println("The perimeter of this square is " + 4 * length);
+                } else {
+                    System.out.println("The area of this square is " + Math.pow(length,2));
+                }
 
-              	    	  System.out.println("The perimeter is:" + 2 * l + 2 *b);
-            	      break;
-
-              	      case("Area"):
-                		   System.out.println("The area is:" + l * b);
-            	      break;
-              	   
-              	   }
-         	      break;
-
-            	   case("Circle"):
-              	     switch (op) {
-              	  
-              	      case("Perimeter"):
-               		   System.out.println("The perimeter is:" + 2 * 3.14 * l);
-            	      break;
-
-              	      case("Area"):
-                		   System.out.println("The area is:" + 3.14 * l * l);
-            	      break;
-              	   
-              	   }
-         	      break;
-            	   
-            	   
-            	   
-            	   
-            	  }
-            	  
-              }
+		// Do the same if-else for all other shapes!
+			
+                break;
+            case "rectangle":
+                System.out.print("Enter a positive measurement for the length of this rectangle: ");
+                length = Double.parseDouble(scan.nextLine());
+                System.out.print("Enter a positive measurement for the width of this rectangle: ");
+                width = Double.parseDouble(scan.nextLine());
+                System.out.printf("The area of this rectangle is %.2f\n", length * width);
+                break;
+            case "triangle":
+                System.out.print("Enter a positive measurement for the base of this triangle: ");
+                length = Double.parseDouble(scan.nextLine());
+                System.out.print("Enter a positive measurement for the height of this triangle: ");
+                height = Double.parseDouble(scan.nextLine());
+                System.out.printf("The area of this triangle is %.2f\n", (length * height) / 2);
+                break;
+            case "circle":
+                System.out.print("Enter a positive measurement for the radius of this circle: ");
+                radius = Double.parseDouble(scan.nextLine());
+                System.out.printf("The area of this circle is %.2f\n", Math.PI * Math.pow(radius,
+                        2));
+                break;
+            case "parallelogram":
+                System.out.print("Enter a positive measurement for the base of this " +
+                        "parallelogram: ");
+                length = Double.parseDouble(scan.nextLine());
+                System.out.print("Enter a positive measurement for the height of this parallelogram: ");
+                height = Double.parseDouble(scan.nextLine());
+                System.out.printf("The area of this parallelogram is %.2f\n", length * height);
+                break;
+            default:
+                System.out.println("Invalid shape entered.");
+        } // end switch
+    }
 }
